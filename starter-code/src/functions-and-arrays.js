@@ -63,6 +63,18 @@ const wordsArr = [
   'palace'
 ];
 
+function averageWordLength(array) {
+  let wordLenghts = [];
+
+  for (let word of array) {
+    wordLenghts.push(word.length);
+  }
+
+  let wordMedia = averageNumbers(wordLenghts);
+
+  return wordMedia;
+}
+
 // Iteration #5: Unique arrays
 const wordsUnique = [
   'crab',
@@ -78,6 +90,22 @@ const wordsUnique = [
   'bring'
 ];
 
+function uniquifyArray(array) {
+  if (array.length === 0) {
+    return [];
+  }
+
+  array.forEach(function(word1, index1) {
+    array.forEach(function(word2, index2) {
+      if (word1 === word2 && index1 !== index2) {
+        array.splice(index2, 1);
+      }
+    });
+  });
+
+  return array;
+}
+
 // Iteration #6: Find elements
 const wordsFind = [
   'machine',
@@ -89,6 +117,16 @@ const wordsFind = [
   'truth',
   'disobedience'
 ];
+
+function doesWordExist(array, wordToSearch) {
+  var exists = false;
+  for (let word of array) {
+    if (wordToSearch === word) {
+      exists = true;
+    }
+  }
+  return exists;
+}
 
 // Iteration #7: Count repetition
 const wordsCount = [
@@ -104,6 +142,19 @@ const wordsCount = [
   'disobedience',
   'matter'
 ];
+
+function howManyTimes(array, wordToSearch) {
+  if (array.length === 0) {
+    return 0;
+  }
+  let total = 0;
+  for (let word of array) {
+    if (wordToSearch === word) {
+      total++;
+    }
+  }
+  return total;
+}
 
 // Iteration #8: Bonus
 
